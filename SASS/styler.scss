@@ -2,7 +2,7 @@
 /* SASS Stylers --------------------------------------- */
 
 $background-color: #F7F7F7;
-$banner-font: T;
+$banner-color: black;
 $body-font: ;
 $primary-color: ;
 $secondary-color: ;
@@ -12,4 +12,12 @@ $secondary-color: ;
 body, html {
     height: 100%;
     background-color: $background-color;
+}
+
+.nav{
+   background-color: $banner-color;
+   font-size: 1.1em;
+    .nav-link{
+        color: white;
+}
 }
