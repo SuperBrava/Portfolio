@@ -7,17 +7,63 @@ $body-font: ;
 $primary-color: ;
 $secondary-color: ;
 
+/* SASS Mixin ---------------------------------------- */
+@mixin scroller{
+  from {
+    background-position:0% 0%;
+  }
+  to {
+    background-position:3000% 0%;
+  }
+}
+
+
 /* Body Style  --------------------------------------- */
 
 body, html {
-    height: 100%;
-    background-color: $background-color;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
 }
 
 .nav{
-   background-color: $banner-color;
-   font-size: 1.1em;
+  background: linear-gradient(to bottom, black 90%, transparent 10%);
+  font-size: 1.2em;
+  height: 7%;
     .nav-link{
         color: white;
+}}
+
+h1, h2{
+  color: white;
 }
+
+.stars{
+  position:fixed;
+   background:url(images/night-sky.png),;
+   overflow: hidden;
+  -webkit-animation:600s scroll infinite linear;
+  -moz-animation:600s scroll infinite linear;
+  -o-animation:600s  scroll infinite linear;
+  -ms-animation:600s  scroll infinite linear;
+  animation:600s scroll infinite linear;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100vh;
 }
+
+.overlay{ /*--- blue semi-opaque gradient (footer) --- */
+  bottom:0;
+  left:0;
+  width: 100%;
+  height: 105vh;
+  background: linear-gradient(to top, #1B2735 0%, transparent 60%);
+}
+
+/* Scroll Mixin for browser compatibility ---- */
+@-webkit-keyframes scroll{ @include scroller;}
+@-moz-keyframes scroll{ @include scroller;}
+@-o-keyframes scroll{ @include scroller;}
+@-ms-keyframes scroll{ @include scroller;}
+@keyframes scroll{ @include scroller;}
