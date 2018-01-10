@@ -3,9 +3,12 @@
 
 $background-color: #F7F7F7;
 $banner-color: black;
-$body-font: ;
 $primary-color: ;
 $secondary-color: ;
+
+@font-face {
+font-family: 'Nunito', sans-serif;
+};
 
 /* SASS Mixin ---------------------------------------- */
 @mixin scroller{
@@ -17,41 +20,140 @@ $secondary-color: ;
   }
 }
 
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
 
 /* Body Style  --------------------------------------- */
-
-body, html {
-  height: 100vh;
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+html, body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Nunito', sans-serif;
   overflow: hidden;
 }
 
 .nav{
-  background: linear-gradient(to bottom, black 90%, transparent 10%);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 90%, transparent 10%);
   font-size: 1.2em;
   height: 7%;
     .nav-link{
-        color: white;
+      color: white;
 }}
 
-h1, h2{
+.main-content{
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.landing-title{
+  font-size: 1.8rem;
+  line-height: 2rem;
+  height: 60%;
+  text-align: center;
+  color: white;
+  @include vertical-align;
+  font-style: italic;
+  padding-bottom: 20px;
+  .title{
+    width: 70%; /* PNG image, not a font */
+  }
+  h3{
+    font-style: normal;
+  }
+}
+
+#breaker{
+  border-top: white solid 2px;
+  width: 25%;
+  margin: 2% auto;
+  padding-bottom: 20px;
+}
+
+.content-container{
+  position: relative;
+  background: rgba(0, 0, 0, 0.25);
+  border: solid 5px white;
+  border-radius: 15px;
+  height: 70%;
+  width: 65%;
+  margin: auto;
+  margin-top: 45px;
   color: white;
 }
 
+.divider{
+  height: 25%;
+  width: 100%;
+    .arrow{
+  display: flex;
+  margin: 30px auto 0px;
+  width: 80px;
+  @include vertical-align;
+}}
+
+.headings{
+@include vertical-align;
+text-align: center;
+.heading1{
+  font-size: 4.5rem;
+}
+.heading2{
+  font-size: 3.5rem;
+}}
+
 .stars{
-  position:fixed;
+  position:absolute;
    background:url(images/night-sky.png),;
    overflow: hidden;
   -webkit-animation:600s scroll infinite linear;
   -moz-animation:600s scroll infinite linear;
-  -o-animation:600s  scroll infinite linear;
-  -ms-animation:600s  scroll infinite linear;
+  -o-animation:600s scroll infinite linear;
+  -ms-animation:600s scroll infinite linear;
   animation:600s scroll infinite linear;
   bottom:0;
   left:0;
   width:100%;
   height:100vh;
 }
+
+.overlay{ /*--- blue semi-opaque gradient (footer) --- */
+  position: absolute;
+  bottom:0;
+  left:0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(to top, #1B2735 0%, transparent 80%) ;
+  z-index: 3;
+}
+
+.overlay-footer{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  z-index: 4;
+}
+
+.footer-image{
+  width:100%;
+  margin: auto;
+  margin-bottom: -20px;
+}
+
+
+h1, h2{
+  color: white;
+}
+
 
 .overlay{ /*--- blue semi-opaque gradient (footer) --- */
   bottom:0;
