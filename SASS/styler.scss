@@ -44,16 +44,23 @@ body{
   font-family: $primary-font;
     h1{
     font-size: 11rem;
-    padding: 12% 0 40px;
+    font-size: calc(80px + (180 - 80) * ((100vw - 300px) / (1600 - 300)));
+  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
+  ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+    padding: 12% 10px 40px;
   }
-  h3{
-   font-size: 3em;
-  }
-    h2{
-      font-size: 2em;
-      font-family: $secondary-font;
+    h3{
+     font-size:  calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+     /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
+     ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
     }
-}
+      h2{
+       font-size:  calc(25px + (35 - 25) * ((100vw - 300px) / (1600 - 300)));
+       /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
+       ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+        font-family: $secondary-font;
+      }
+    }
 
 .carousel{
   margin: 50px;
@@ -78,7 +85,9 @@ margin: auto;
   border-right: solid 5px $primary-color;
   border-radius: 15px;
   min-height: 70%;
-  width: 70%;
+  width: calc(380px + (1100 - 380) * ((100vw - 300px) / (1600 - 300)));
+  /* size: calc([minimum size] + ([maximum size] - [minimum size]) *
+  ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
   margin: auto;
   margin-top: 45px;
   h2{
@@ -113,19 +122,34 @@ margin: auto;
 .portfolio-container{
   min-height: 300px;
   h3{
-    padding-bottom: 15px;
+    padding: 15px;
+   }
+   p, li{
+     font-size:  calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+     /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
+     ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
    }
 }
+
+.He-container{
+  text-align: center;
+}
+.HE{
+display: inline-block;
+text-align: left;
+margin-right: 20px;
+}
+
 .portfolio-pic1{
   max-width: 40%;
   float: right;
-  padding-right: 40px;
+  margin: 0 40px 0 10px;
 }
 
 .portfolio-pic2{
   max-width: 40%;
   float: left;
-  margin: 0 50px 0 40px;
+  margin: 0 10px 0 40px;
 }
 
 .divider{
