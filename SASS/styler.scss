@@ -15,15 +15,23 @@ $secondary-font: 'Open Sans', sans-serif;;
 * {box-sizing:border-box}
 
 /* Body Style  --------------------------------------- */
-body{
+html{
   height: 100%;
   width: 100%;
+}
+
+body{
   font-family: $secondary-font;
   background: url("images/mountains-night-clouds-lake2.jpg") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-repeat: no-repeat;
+   background-position: center;
+   background-attachment: fixed;
+   webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   height:100%;
+   width:100%;
 }
 
 .nav{
@@ -86,50 +94,51 @@ margin: auto;
   border-left: solid 5px $primary-color;
   border-right: solid 5px $primary-color;
   border-radius: 15px;
-  min-height: 70%;
+  margin: auto;
   width: calc(380px + (1100 - 380) * ((100vw - 300px) / (1600 - 300)));
   /* size: calc([minimum size] + ([maximum size] - [minimum size]) *
   ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
-  margin: auto;
-  margin-top: 45px;
-  h2{
-    font-size: 3em;
-    padding: 25px 0 0;
-    text-align: center;
-    color: $primary-color;
-    font-family: $primary-font;
-  }
-  h3{
-    text-align: center;
-    text-decoration: underline;
-    color: $primary-color;
-  }
-  p{
-    text-align: none;
-    font-size: 1.3em;
-    padding: 0 50px;
-    color: $primary-color;
-    a{
-      color: green;
-      text-decoration: none;
+      h2{
+        font-size: 3em;
+        padding: 25px 0 0;
+        text-align: center;
+        color: $primary-color;
+        font-family: $primary-font;
+      }
+      h3{
+        text-align: center;
+        padding: 0 15px;
+        text-decoration: underline;
+        color: $primary-color;
+        font-size: calc(25px + (35 - 25) * ((100vw - 300px) / (1600 - 300)));
+        /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
+        ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+      }
+      p{
+        text-align: none;
+        font-size: 1.3em;
+        padding: 0 50px;
+        color: $primary-color;
+        font-size:  calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
+        /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
+        ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+        margin: auto;
+        margin-top: 45px;
+        a{
+          color: green;
+          text-decoration: none;
+        }
+      }
     }
-  }
-  li{
-    color: $primary-color;
-    padding-left: 15px;
-    font-size: 1.3em;
-  }
-}
-
 
 .portfolio-container{
     min-height: 300px;
     align-items:center;
     margin: 0;
-  h3{
-    padding: 15px;
-   }
-   p, li{
+   li{
+     color: $primary-color;
+     padding-left: 15px;
+     font-size: 1.3em;
      font-size:  calc(14px + (22 - 14) * ((100vw - 300px) / (1600 - 300)));
      /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
      ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
@@ -165,7 +174,7 @@ color: black;
 }
 
 .col{
-  padding: 0;
+  padding: 15px 0;
 }
 
 .divider{
@@ -178,6 +187,21 @@ color: black;
 }}
 
 
+.LI-container{
+ justify-content: center;
+  display: flex;
+  margin:auto;
+}
+
+.CV-icon{
+  display: flex;
+  margin: auto;
+  text-align: center;
+  width: auto;
+  height: auto;
+  padding: 15px;
+}
+
 .overlay-footer{
   position: fixed;
   bottom:0;
@@ -188,12 +212,14 @@ color: black;
 
 .footer-image{
   width:100%;
-  margin: auto;
-  margin-bottom: -2vh;
+  position: fixed;
+  bottom:0;
+  left:0;
+  margin-bottom: -2px;
 }
 
 /*Media Queries ---- */
-@media (min-width: 1050px) {
+@media (min-width: 900px) {
 	.portfolio-container {
     display: flex;
     justify-content: space-between;
