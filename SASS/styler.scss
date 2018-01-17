@@ -45,7 +45,7 @@ body{
   font-size: calc(15px + (22 - 15) * ((100vw - 300px) / (1600 - 300)));
 /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
 ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
-  height: 7%;
+  height: 5.5%;
   font-family: $primary-font;
   width: 100vw;
   .nav-link{
@@ -132,14 +132,14 @@ margin: auto;
         margin: auto;
         margin-top: 45px;
         a{
-          color: green;
+          color: #3881f7;
           text-decoration: none;
         }
       }
     }
 
 .portfolio-container{
-    min-height: 300px;
+    min-height: 500px;
     align-items:center;
     margin: 0;
    li{
@@ -193,20 +193,38 @@ color: black;
   width: 100px;
 }}
 
+.contact-container{
+  min-height: 450px;
+}
+
+.LI-text{
+  position: relative;
+  margin-top: 0;
+}
 
 .LI-container{
- justify-content: center;
   display: flex;
+  justify-content: center;
   margin:auto;
+  text-align: center;
+}
+
+.cv-ref-container{
+text-align: center;
 }
 
 .CV-icon{
-  display: flex;
-  margin: auto;
-  text-align: center;
-  width: auto;
-  height: auto;
-  padding: 15px;
+  width: 81px;
+  height: 103px;
+  margin: 20px 20px 0px;
+}
+
+#indented{
+  margin: 20px 0px 40px 0px;
+}
+
+.breaker-bottom{
+  height: 250px;
 }
 
 .overlay-footer{
