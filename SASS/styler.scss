@@ -26,17 +26,11 @@ body{
   position: absolute;
   font-family: $secondary-font;
   background: url("images/mountains-night-clouds-lake2.jpg") no-repeat center center fixed;
-  background-repeat: no-repeat;
-   background-position: center;
-   background-attachment: fixed;
-   webkit-background-size: cover;
-   -moz-background-size: cover;
-   -o-background-size: cover;
-   background-size: cover;
-   height:100vh;
-   width:100vw;
-   overflow-y: scroll;
-    -webkit-overflow-scrolling:touch;
+  background-size: cover;
+  height:100vh;
+  width:100vw;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling:touch;
 }
 
 .nav{
@@ -45,13 +39,15 @@ body{
   font-size: calc(15px + (22 - 15) * ((100vw - 300px) / (1600 - 300)));
 /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
 ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+
+/*size calculators are included to provide responsive design to various screen sizes*/
+
   height: 5.5%;
   font-family: $primary-font;
   width: 100vw;
   .nav-link{
     color: $primary-color;
 }}
-
 
 .landing-title{
   position: relative;
@@ -62,32 +58,16 @@ body{
     h1{
     font-size: 11rem;
     font-size: calc(80px + (180 - 80) * ((100vw - 300px) / (1600 - 300)));
-  /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
-  ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
     padding: 12% 10px 40px;
   }
     h3{
      font-size:  calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
-     /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
-     ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+  }
+    h2{
+     font-size:  calc(25px + (35 - 25) * ((100vw - 300px) / (1600 - 300)));
+    font-family: $secondary-font;
     }
-      h2{
-       font-size:  calc(25px + (35 - 25) * ((100vw - 300px) / (1600 - 300)));
-       /* font-size: calc([minimum size] + ([maximum size] - [minimum size]) *
-       ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
-        font-family: $secondary-font;
-      }
-    }
-
-.carousel{
-  margin: 50px;
-  padding-bottom: 25px;
-}
-
-.carousel-item img{
-width: 100%;
-margin: auto;
-}
+  }
 
 #breaker{
   border-top: white solid 2px;
@@ -138,6 +118,15 @@ margin: auto;
       }
     }
 
+.carousel{
+  margin: 50px;
+  padding-bottom: 25px;
+  .carousel-item img{
+    width: 100%;
+    margin: auto;
+ }
+}
+
 .portfolio-container{
     min-height: 500px;
     align-items:center;
@@ -156,12 +145,12 @@ margin: auto;
  display: flex;
  width:90%;
  margin: auto;
+  button{
+    color: $primary-color;
+    text-decoration: none;
+  }
 }
 
-button{
-  color: $primary-color;
-    text-decoration: none;
-}
 .github-container{
   color: $primary-color;
   display: flex;
@@ -256,8 +245,6 @@ text-align: center;
     flex: 1;
   }
 }
-
-
 
 /* Slideshow Styler ---- */
 
